@@ -18,6 +18,6 @@ app.get('/users', (request, response) => {
 
 // To do..
 app.get('/todos' , (request, response)=>{
-    let todos = JSON.parse(readFileSync('users.json'));
+    let todos = JSON.parse(readFileSync('todos.json'));
     response.send(todos);
 })
