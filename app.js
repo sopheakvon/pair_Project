@@ -1,6 +1,8 @@
+
 const express = require('express')
 const app = express()
 const {readFileSync}  = require('fs');
+
 
 app.listen(process.env.PORT || 5000, () => console.log("Server running..."))
 
@@ -13,3 +15,9 @@ app.get('/users', (request, response) => {
     response.send(users);
 });
 // heroku
+
+// To do..
+app.get('/todos' , (request, response)=>{
+    let todos = JSON.parse(readFileSync('users.json'));
+    response.send(todos);
+})
